@@ -98,7 +98,7 @@ $MpBot->addCommand('darkside', function ($params, Message $message, CommandBot $
     }, function (\Exception $e) use ($bot) {
         $bot->getLogger()->addInfo("There was an error joining the voice channel: {$e->getMessage()}");
     });
-}); */
+});
 
 $MpBot->addCommand('coin', function ($params, Message $message, CommandBot $bot, Discord $discord) {
     $images = ["heads.png", "tails.png"];
