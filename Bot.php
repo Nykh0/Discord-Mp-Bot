@@ -32,7 +32,7 @@ $MpBot->on('ready', function ($config, $discord, CommandBot $MpBot) {
     $MpBot->getLogger()->addNotice("Connected to " . count($discord->guilds) . " servers");
 });
 
-/*$MpBot->addCommand('leeroy', function ($params, Message $message, CommandBot $bot, Discord $discord) {
+$MpBot->addCommand('leeroy', function ($params, Message $message, CommandBot $bot, Discord $discord) {
     $guild = $message->channel->guild;
 
     $channels = $guild->channels->getAll("type", Channel::TYPE_VOICE);
@@ -189,7 +189,7 @@ $MpBot->addCommand('hey', function ($params, Message $message, CommandBot $bot, 
 });
 
 $MpBot->addCommand('kappa', function ($params, Message $message, CommandBot $bot, Discord $discord) {
-	$message->channel->sendFile('C:\wamp64\www\MpBot\image\kappa.png', 'kappa.png')->then(function ($response) {
+	$message->channel->sendFile('image/kappa.png', 'kappa.png')->then(function ($response) {
 							echo "The file was sent!";
 					})->otherwise(function (\Exception $e){
 							echo "There was an error sending the file: {$e->getMessage()}";
