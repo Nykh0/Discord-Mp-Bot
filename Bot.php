@@ -58,7 +58,7 @@ $MpBot->addCommand('leeroy', function ($params, Message $message, CommandBot $bo
             $vc->playFile('audio/leeroy.mp3')->then(function () use ($vc) {
                 $vc->close();
             }, function (\Exception $e) use ($bot) {
-                $bot->getLogger()->addInfo("There was an error sending the mp3: {$e->getMessage()}"); // Libsodium is missing
+                $bot->getLogger()->addInfo("There was an error sending the mp3: {$e->getMessage()}");
             });
         });
     }, function (\Exception $e) use ($bot) {
@@ -222,12 +222,9 @@ function ReturnRank($login,$titleId) {
 					$rankings = new \Maniaplanet\WebServices\Rankings($username, $password);
 					try {
 					$player = $players->get($login);
-					$test = json_encode(($rankings->getMultiplayerPlayer($titleId,$login)),true);
-					$params = explode("u'", $test);
-					$reconstruction = explode("\"", $params[0]); // To get out the rank :D
-					$params = $reconstruction;
-					$nbCase = count($params);
-					return $params[37];
+					$obj = $rankings->getMultiplayerPlayer($titleId,$login);
+					$rank = $obj->ranks[1]->rank;
+					return $rank;
 					}
 					catch(Exception $e) {
 						return "Error ! Login incorrect !";
