@@ -59,7 +59,7 @@ $MpBot->addCommand('leeroy', function ($params, Message $message, CommandBot $bo
             $vc->playFile('audio/leeroy.mp3')->then(function () use ($vc) {
                 $vc->close();
             }, function (\Exception $e) use ($bot) {
-                $bot->getLogger()->addInfo("There was an error sending the mp3: {$e->getMessage()}"); // Libsodium is missing
+                $bot->getLogger()->addInfo("There was an error sending the mp3: {$e->getMessage()}");
             });
         });
     }, function (\Exception $e) use ($bot) {
@@ -192,7 +192,7 @@ $MpBot->addCommand('hey', function ($params, Message $message, CommandBot $bot, 
 });
 
 $MpBot->addCommand('kappa', function ($params, Message $message, CommandBot $bot, Discord $discord) {
-	$message->channel->sendFile('C:\wamp64\www\MpBot\image\kappa.png', 'kappa.png')->then(function ($response) {
+	$message->channel->sendFile('image/kappa.png', 'kappa.png')->then(function ($response) {
 							echo "The file was sent!";
 					})->otherwise(function (\Exception $e){
 							echo "There was an error sending the file: {$e->getMessage()}";
