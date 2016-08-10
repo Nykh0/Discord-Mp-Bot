@@ -1,9 +1,9 @@
 {
-	"name": "kleisauke/CommandBot",
+	"name": "nicolas1001/Discord-MP-Bot",
 	"type": "project",
-	"version": "0.1.0",
+	"version": "1.1",
 	"license": "MIT",
-	"description": "A library that helps with creating a bot with helpers for commands.",
+	"description": "A little Bot for Discord using DiscordPHP and Maniaplanet WS API !",
 	"require": {
         "php": "^5.6|^7.0",
 		"team-reflex/discord-php": "dev-develop",
@@ -18,8 +18,8 @@
     },
     "authors": [
         {
-            "name": "Kleis Auke Wolthuizen",
-            "email": "info@kleisauke.nl"
+            "name": "Sturla Nicolas",
+            "email": "nicostur@gmail.com"
         }
     ]
 }
