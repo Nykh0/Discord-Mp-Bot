@@ -269,7 +269,7 @@ function ReturnNickname($login){
 					$rankings = new \Maniaplanet\WebServices\Rankings($username, $password);
 					try {
 					$player = $players->get($login)->nickname;
-					$string = new \Manialib\Formatting\string($player);
+					$string = new \Manialib\Formatting\String($player);
 					$nicknameFinal = $string->stripAll();
 					return $nicknameFinal;
 					}
