@@ -2,7 +2,7 @@
 /*
  * Discord bot for maniaplanet
  * Display the rank of a player in his continent and other fun commands !
- * V 1.0
+ * V 1.1
  * Made by Nykho, 22016
  * Credit to Kleis Auke#5462 for the help!
  * Thx also to Nerpson#1996 and HYPE#4144 for their help too !
@@ -18,6 +18,7 @@ use Discord\Parts\Channel\Channel;
 use Discord\Parts\Channel\Message;
 use Discord\Voice\VoiceClient;
 use Maniaplanet\WebServices;
+use Manialib\Formatting\String;
 
 $MpBot = new CommandBot([
     'bot-token' => 'YOUR_BOT_TOKEN_HERE',
@@ -58,7 +59,7 @@ $MpBot->addCommand('leeroy', function ($params, Message $message, CommandBot $bo
             $vc->playFile('audio/leeroy.mp3')->then(function () use ($vc) {
                 $vc->close();
             }, function (\Exception $e) use ($bot) {
-                $bot->getLogger()->addInfo("There was an error sending the mp3: {$e->getMessage()}");
+                $bot->getLogger()->addInfo("There was an error sending the mp3: {$e->getMessage()}"); // Libsodium is missing
             });
         });
     }, function (\Exception $e) use ($bot) {
@@ -119,10 +120,11 @@ $MpBot->addCommand('coin', function ($params, Message $message, CommandBot $bot,
 $MpBot->addCommand('rank', function ($params, Message $message, CommandBot $bot, Discord $discord) {
 	if (count($params) == 1) {
 					$login = $params[0];
-
-					$rank = ReturnRank($login,'SMStorm'); //Seeking the rank of the player, function at the bottom of this script
-					if (is_numeric($rank)) {
-					$message->channel->sendMessage("The rank of $login (With LP) in Storm is : $rank",false);
+					$nickname = ReturnNickname($login);
+					$rankS = ReturnRank($login,'SMStorm'); //Seeking the rank of the player, function at the bottom of this script
+					$rankT = ReturnRank($login,'TMStadium'); //Seeking the rank of the player, function at the bottom of this script
+					if (is_numeric($rankS) && is_numeric($rankT)) {
+					$message->channel->sendMessage("The rank of $nickname in Storm is : $rankS and the rank in Stadium is : $rankT",false);
 					}
 					else {
 					$message->channel->sendMessage("This login does not exist !",false);
@@ -134,11 +136,12 @@ $MpBot->addCommand('rank', function ($params, Message $message, CommandBot $bot,
 					$title = $params[1];
 					$titleId = ReturnTitle($title);
 					$title = ucfirst(strtolower($title));
-
+					$nickname = ReturnNickname($login);
 					$rank = ReturnRank($login,$titleId); //Seeking the rank of the player, function at the bottom of this script
+
 					if ($rank != -1) {
 					if (is_numeric($rank)) {
-					$message->channel->sendMessage("The rank of $login (With LP) in $title is : $rank",false);
+					$message->channel->sendMessage("The rank of $nickname in $title is : $rank",false);
 					}
 					else {
 						$message->channel->sendMessage("This login does not exist !",false);
@@ -189,7 +192,7 @@ $MpBot->addCommand('hey', function ($params, Message $message, CommandBot $bot, 
 });
 
 $MpBot->addCommand('kappa', function ($params, Message $message, CommandBot $bot, Discord $discord) {
-	$message->channel->sendFile('image/kappa.png', 'kappa.png')->then(function ($response) {
+	$message->channel->sendFile('C:\wamp64\www\MpBot\image\kappa.png', 'kappa.png')->then(function ($response) {
 							echo "The file was sent!";
 					})->otherwise(function (\Exception $e){
 							echo "There was an error sending the file: {$e->getMessage()}";
@@ -222,6 +225,13 @@ function ReturnRank($login,$titleId) {
 					$rankings = new \Maniaplanet\WebServices\Rankings($username, $password);
 					try {
 					$player = $players->get($login);
+					/*$test = json_encode(($rankings->getMultiplayerPlayer($titleId,$login)),true);
+					$params = explode("u'", $test);
+					$reconstruction = explode("\"", $params[0]); // To get out the rank :D
+					$params = $reconstruction;
+					$nbCase = count($params);
+					return $params[37];*/
+										
 					$obj = $rankings->getMultiplayerPlayer($titleId,$login);
 					$rank = $obj->ranks[1]->rank;
 					return $rank;
@@ -249,4 +259,21 @@ function ReturnTitle($titleId) {
 	case "Tmplus" : return('TMPLUS@redix');
 	default : return('Error ! Title not recognized');
 	}
+}
+
+// Return the nickname in game of a given string login
+function ReturnNickname($login){
+					$username = 'nicolas1001|SMDiscord';
+					$password = 'ShootmaniaDiscord';
+					$players = new \Maniaplanet\WebServices\Players($username, $password);
+					$rankings = new \Maniaplanet\WebServices\Rankings($username, $password);
+					try {
+					$player = $players->get($login)->nickname;
+					$string = new \Manialib\Formatting\string($player);
+					$nicknameFinal = $string->stripAll();
+					return $nicknameFinal;
+					}
+					catch(Exception $e) {
+						return "Error ! Login incorrect !";
+					}
 }
