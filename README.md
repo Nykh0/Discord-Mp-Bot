@@ -9,7 +9,7 @@ This bot has been made in php version 5.6.4.
 - [Maniaplanet WS API](https://github.com/maniaplanet/maniaplanet-ws-sdk)
 
 # Version
-The actual version is the 1.0
+The actual version is the 1.1
 
 # Installing
 You can install your bot on your linux/windows machine following these steps.
