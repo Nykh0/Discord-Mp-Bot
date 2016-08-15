@@ -179,7 +179,8 @@ Send a PM to Nykho#8970 if you want to add your title pack to the list !
 
 **!darkside** (Play the sound of the dark side - *You need to be on a voice channel !*)
 
-**!coin** (Flip the coin of the discord logo)';
+**!coin** (Flip the coin of the discord logo)
+**!hylis** (Display a beautiful mixed face between kappa and Hylis (thx xrayjay !)';
 					$message->reply($msg,false);
 });
 
