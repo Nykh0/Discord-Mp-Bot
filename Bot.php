@@ -208,6 +208,14 @@ $MpBot->addCommand('ping', function ($params, Message $message, CommandBot $bot,
 	$message->reply('pong!');
 });
 
+$MpBot->addCommand('hylis', function ($params, Message $message, CommandBot $bot, Discord $discord) {
+	$message->channel->sendFile("image/hyliskappa.png", $result)->then(function ($response) use ($bot) {
+        $bot->getLogger()->addInfo("The file was sent!");
+    })->otherwise(function (\Exception $e) use ($bot) {
+        $bot->getLogger()->addInfo("There was an error sending the file: {$e->getMessage()}");
+    });
+});
+
 $MpBot->start();
 
 //////////////////////////////////////////////////////////////////
