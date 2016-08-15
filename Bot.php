@@ -263,7 +263,7 @@ function ReturnTitle($titleId) {
 	case "Siege" : return('SMStormSiege@nadeolabs');
 	case "Obstacle" : return('obstacle@steeffeen');
 	case "Esltm" : return('esl_comp@lt_forever');
-	case "Galaxy" : return('Galaxy@domino54');
+	case "Galaxy" : return('GalaxyTitles@domino54');
 	case "Rpg" : return('RPG@tmrpg');
 	case "Tmplus" : return('TMPLUS@redix');
 	default : return('Error ! Title not recognized');
