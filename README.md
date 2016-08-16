@@ -4,9 +4,10 @@ A little Bot for discord who can display the rank in game and more !
 # Libraries and language
 This bot has been made in php version 5.6.4.
 
-2 libraries are used :
+3 libraries are used :
 - [DiscordPHP](https://github.com/teamreflex/DiscordPHP)
 - [Maniaplanet WS API](https://github.com/maniaplanet/maniaplanet-ws-sdk)
+- [Manialib/Formatting](https://github.com/manialib/formatting)
 
 # Version
 The actual version is the 1.1
