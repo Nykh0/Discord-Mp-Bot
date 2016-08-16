@@ -31,7 +31,8 @@ You can install your bot on your linux/windows machine following these steps.
 * !how (Ask if you\'re doing well :D)
 * !leeroy (Play the mythic leeroy battlecry - *You need to be on a voice channel !*)
 * !darkside (Play the sound of the dark side - *You need to be on a voice channel !*)
-* !coin (Flip the coin of the discord logo)';
+* !coin (Flip the coin of the discord logo)
+* !hylis (Display a beautiful face of a mix between our lord Kappa and our lord Hylis)
 
 # Thanks
 Credit to Kleis Auke#5462 for his magistral help!
@@ -41,4 +42,4 @@ Thanks also to Nerpson#1996 and HYPE#4144 for their help too !
 This bot is under MIT license 3
 
 # Test server
-Once this bot will be implemented somewhere, I will post here an invite link to the server :)
+You can test this server on the Shootmania Discord Server : [Click here to join !](https://discord.gg/3kfe5)
