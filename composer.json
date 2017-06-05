@@ -5,7 +5,7 @@
 	"license": "MIT",
 	"description": "A little Bot for Discord using DiscordPHP and Maniaplanet WS API !",
 	"require": {
-        "php": "^5.6",
+        "php": "^5.6|^7.0",
 		"team-reflex/discord-php": "dev-develop",
     "monolog/monolog": "^1.18",
     "maniaplanet/maniaplanet-ws-sdk": "^5.0",
