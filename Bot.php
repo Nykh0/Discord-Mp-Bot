@@ -21,7 +21,7 @@ use Maniaplanet\WebServices;
 use Manialib\Formatting\String;
 
 $MpBot = new CommandBot([
-    'bot-token' => 'YOUR_BOT_TOKEN_HERE',
+    'bot-token' => $argv[1],
     'name' => 'MpBot'
 ]);
 $MpBot->on('ready', function ($config, $discord, CommandBot $MpBot) {
