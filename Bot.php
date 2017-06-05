@@ -37,12 +37,6 @@ $MpBot->addCommand('coin', function ($params, Message $message, CommandBot $bot,
     $images = ["heads.png", "tails.png"];
     $result = $images[rand(0, 1)];
 
-    $message->channel->sendMessage($result)->then(function ($response) use ($bot) {
-        $bot->getLogger()->addInfo("The message was sent!");
-    })->otherwise(function (\Exception $e) use ($bot) {
-        $bot->getLogger()->addInfo("There was an error sending the message: {$e->getMessage()}");
-    });
-
     $message->channel->sendFile("image/coin/{$result}", $result)->then(function ($response) use ($bot) {
         $bot->getLogger()->addInfo("The file was sent!");
     })->otherwise(function (\Exception $e) use ($bot) {
