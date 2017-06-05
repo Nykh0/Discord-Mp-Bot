@@ -176,7 +176,7 @@ function ReturnTitle($titleId) {
 	$titleId = ucfirst(strtolower($titleId));
 	switch ($titleId) {
 	case "Storm" : return('SMStorm');
-	case "Lagoon" : return('TMLagoon@nadeo');
+	case "Lagoon" : return('TMLagoon');
 	case "Canyon" : return('TMCanyon');
 	case "Speedball": return ('SpeedBall@steeffeen');
 	case "Royal" : return('SMStormRoyal@nadeolabs');
