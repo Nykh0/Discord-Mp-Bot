@@ -93,7 +93,7 @@ $MpBot->addCommand('help', function ($params, Message $message, CommandBot $bot,
 	$msg = 'Here some help for my commands !
 
 **!rank** (Display the rank of a maniaplanet login). Use : !rank <login> <title> (default title = Storm)
-Title usable : Storm, Elite, Royal, Stadium, Canyon, Valley, Combo, Obstacle, Esltm, Galaxy, Rpg
+Title usable : Storm, Elite, Royal, Stadium, Canyon, Valley, Combo, Obstacle, Esltm, Galaxy, Rpg, Speedball
 Send a PM to Nykho#8970 if you want to add your title pack to the list !
 ***Note : login are case sensitive, not the titlepack***
 
