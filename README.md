@@ -10,7 +10,7 @@ This bot has been made in php version 5.6.4.
 - [Manialib/Formatting](https://github.com/manialib/formatting)
 
 # Version
-The actual version is the 1.1
+The actual version is the 1.2
 
 # Installing
 You can install your bot on your linux/windows machine following these steps.
@@ -29,8 +29,6 @@ You can install your bot on your linux/windows machine following these steps.
 * !yo (An absolutly basic welcome message :) 
 * !hey (What\'s up ?)
 * !how (Ask if you\'re doing well :D)
-* !leeroy (Play the mythic leeroy battlecry - *You need to be on a voice channel !*)
-* !darkside (Play the sound of the dark side - *You need to be on a voice channel !*)
 * !coin (Flip the coin of the discord logo)
 * !hylis (Display a beautiful face of a mix between our lord Kappa and our lord Hylis)
 
