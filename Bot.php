@@ -183,6 +183,7 @@ function ReturnTitle($titleId) {
 	switch ($titleId) {
 	case "Storm" : return('SMStorm');
 	case "Canyon" : return('TMCanyon');
+	case "Speedball": return ('SpeedBall@steeffeen');
 	case "Royal" : return('SMStormRoyal@nadeolabs');
 	case "Stadium" : return('TMStadium');
 	case "Elite" : return('SMStormElite@nadeolabs');
