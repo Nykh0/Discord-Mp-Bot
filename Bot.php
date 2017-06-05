@@ -107,10 +107,6 @@ Send a PM to Nykho#8970 if you want to add your title pack to the list !
 
 **!how** (Ask if you\'re doing well :D)
 
-**!leeroy** (Play the mythic leeroy battlecry - *You need to be on a voice channel !*)
-
-**!darkside** (Play the sound of the dark side - *You need to be on a voice channel !*)
-
 **!coin** (Flip the coin of the discord logo)
 **!hylis** (Display a beautiful mixed face between kappa and Hylis (thx xrayjay !)';
 					$message->reply($msg,false);
