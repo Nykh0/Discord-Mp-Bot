@@ -87,7 +87,7 @@ $MpBot->addCommand('help', function ($params, Message $message, CommandBot $bot,
 	$msg = 'Here some help for my commands !
 
 **!rank** (Display the rank of a maniaplanet login). Use : !rank <login> <title> (default title = Storm)
-Title usable : Storm, Elite, Royal, Stadium, Canyon, Valley, Combo, Obstacle, Esltm, Galaxy, Rpg, Speedball
+Title usable : Storm, Elite, Royal, Stadium, Canyon, Valley, Combo, Obstacle, Esltm, Galaxy, Rpg, Speedball, Lagoon
 Send a PM to Nykho#8970 if you want to add your title pack to the list !
 ***Note : login are case sensitive, not the titlepack***
 
@@ -176,6 +176,7 @@ function ReturnTitle($titleId) {
 	$titleId = ucfirst(strtolower($titleId));
 	switch ($titleId) {
 	case "Storm" : return('SMStorm');
+	case "Lagoon" : return('TMLagoon@nadeo');
 	case "Canyon" : return('TMCanyon');
 	case "Speedball": return ('SpeedBall@steeffeen');
 	case "Royal" : return('SMStormRoyal@nadeolabs');
